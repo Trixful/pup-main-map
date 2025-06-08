@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PUP Kiosk</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body id="body">
+    <nav>
+        <div class="logo">
+            <a><img id="map-icon" src="img/map-solid-24.png" alt="map-arrow"></a>
+            <span class="logoname">Polytechnic University of the Philippines</span>
+        </div>
+    </nav>
+<!-- 
+    <section id="directory">
+        <ul>
+            <li data-coordinates="100,150" data-id="amphitheater">Amphitheater</li>
+            <li onclick="highlightHome('directory2')">Sining Lahi Headquarters</li>
+            <li onclick="highlightArea(3)">Building and Grounds Maintenance Office</li>
+            <li onclick="highlightArea(4)">Catwalk</li>
+            <li onclick="highlightArea(5)">Centennial Monument</li>
+        </ul>
+    </section> -->
+      
+
+    <section class="home" id="Home">
+        <main>
+            <img id="pupmap" src="img/PUP-MAP.png" alt="PUP Map" usemap="#map">
+
+            <map name="map">
+
+                <!-- AMPHITHEATER NO 1 -->
+                <area id="area1" shape="poly" coords="266,265,280,271,294,279,287,293,266,301,245,290,241,269,253,271" href="#" alt="Amphitheater" onmouseover="showSceneryBox('img/amphitheater.jpg', 'Amphitheater', 'Located inside the lagoon where events and plays happen.')" onmouseout="removeSceneryBox()">
+
+                <!-- SINING LAHI HEADQUARTERS NO 2 -->
+                <area shape="poly" coords="172,34,204,36,200,58,202,74,185,75,185,62,175,47" href="#" alt="Sining Lahi Headquarters" data-home="directory2" onclick="highlightArea(2)" onmouseover="showSceneryBox('img/sining.jpg', 'Sining Lahi Headquarters', 'Location for Sining Lahi headquarters and the Banda Kawayan.')" onmouseout="removeSceneryBox()">
+
+                <!--Building and Grounds Maintenance Office NO 3 -->
+                <area shape="poly" coords="210,477,228,477,238,472,248,477,267,478,270,494,238,501,205,495" href="#" alt="Building and Grounds Maintenance Office" onmouseover="showSceneryBox('img/pupcd.jpg', 'Building and Grounds Maintenance Office', 'Building for carpentry.')" onmouseout="removeSceneryBox()">
+
+                <!-- CATWALK NO 4 -->
+                <area shape="poly" coords="626,213,629,222,621,224,487,223,477,228,467,222,447,222,434,218,394,146,402,136,445,205,467,208,477,202,488,209,616,210" href="#" alt="Catwalk" onmouseover="showSceneryBox('img/catwalk.jpg', 'Catwalk', 'Walkway once you enter PUP. They call it the catwalk because you will feel like a model walking down this way.')" onmouseout="removeSceneryBox()">
+
+                <!-- Centennial Monument NO 5 -->
+                <area shape="poly" coords="349,209,362,224,351,240,334,227" href="#" alt="Centennial Monument" onmouseover="showSceneryBox('img/cent-monu.jpg', 'Centennial Monument', 'The entrance to the Lagoon')" onmouseout="removeSceneryBox()">
+
+                <!-- Charlie del Rosario Hall NO 6  -->
+                <area shape="poly" coords="95,169,137,195,183,220,167,249,121,224,79,200" href="#" alt="Charlie del Rosario Hall" onmouseover="showSceneryBox('img/charlie.jpg', 'Charlie del Rosario Hall', 'A structure dedicated to the first victim of the Marcos Regime. Where the Guidance Office is located.')" onmouseout="removeSceneryBox()">
+
+                <!-- East Gate NO 7 -->
+                <area shape="poly" coords="617,447,638,450,647,462,644,477,634,479,629,488,613,488,612,468,623,464" href="#" alt="East Gate" onmouseover="showSceneryBox('img/eastgate.png', 'East Gate', 'Entrance/Exit at the East Side near Maui Oasis by Filinvest')" onmouseout="removeSceneryBox()">
+
+                <!-- Flag Pole NO 8 -->
+                <area shape="circle" coords="369,305,11" href="#" alt="Flagpole" onmouseover="showSceneryBox('img/flagpole.jpg', 'Flagpole', 'Every Monday, the flag was being raised.')" onmouseout="removeSceneryBox()">
+
+                <!-- Grandstand NO 9 -->
+                <area shape="poly" coords="475,287,493,299,475,323,473,333,465,338,452,361,429,352,451,319" href="#" alt="Grandstand"  onmouseover="showSceneryBox('img/grandstand.jpg', 'Grandstand', 'Where people sit to view the whole track!')" onmouseout="removeSceneryBox()">
+
+                <!-- GYM NO 10 -->
+                <area shape="poly" coords="459,52,574,52,579,64,579,99,578,115,458,115" href="#" alt="Gymnasium" onmouseover="showSceneryBox('img/gymnasium.jpg', 'Gymnasium', 'Where students practice their Physical Education activities and events happens.')" onmouseout="removeSceneryBox()">
+
+                <!-- CHAPEL NO 11 -->
+                <area shape="circle" coords="344,412,49" href="#" alt="Interfaith Chapel" onmouseover="showSceneryBox('img/chapel.jpg', 'Interfaith Chapel', 'A nondenominational Christian church where people consider a place of worship.')" onmouseout="removeSceneryBox()">
+
+                <!-- HS LAB NO 12 -->
+                <area shape="poly" coords="102,54,167,92,162,105,167,122,166,138,176,153,174,169,188,187,185,210,75,144,66,110,74,95,85,74" href="#" alt="Laboratory High School"   onmouseover="showSceneryBox('img/labHS.jpg', 'Laboratory High School', 'Where high school students of PUP are located. A small parcel of land and is composed of four buildings.')" onmouseout="removeSceneryBox()">
+
+                <!-- LAGOON NO 13 -->
+                <area shape="poly" coords="282,162,292,145,311,157,313,174,313,185,319,202,324,219,331,238,328,256,311,266,289,266,268,267,238,266,260,244,266,224,276,211,281,197,280,176" href="#" alt="Lagoon" onmouseover="showSceneryBox('img/lagoon.jpg', 'Lagoon', 'It was just an ordinary mossy creek with trees around and birds chirping for drama. Also surrounded by food stalls!')" onmouseout="removeSceneryBox()">
+
+                <!-- MAIN-DOME NO 14 -->
+                <area shape="circle" coords="256,357,29" href="#" alt="Dome" onmouseover="showSceneryBox('img/dome.png', 'Dome', 'The center of PUPs main building.')" onmouseout="removeSceneryBox()">
+
+                <!-- MAIN-EAST NO 15 -->
+                <area shape="poly" coords="233,389,230,466,239,471,247,476,268,475,279,467,279,386" href="#" alt="East Wing of Mabini Campus" onmouseover="showSceneryBox('img/eastwing.png',  'East Wing of Mabini Campus', 'This is PUP Main Building East Wing.')" onmouseout="removeSceneryBox()">
+
+                <!-- MAIN-NORTH NO 16 -->
+                <area shape="poly" coords="337,283,354,286,359,304,362,316,363,328,293,364,270,323" href="#" alt="North Wing of Mabini Campus" onmouseover="showSceneryBox('img/northwing.jpg', 'North Wing of Mabini Campus', 'This is PUP Main Building North Wing.')" onmouseout="removeSceneryBox()">
+
+                <!-- MAIN-SOUTH NO 17 -->
+                <area shape="poly" coords="218,360,205,364,186,345,173,335,139,354,140,368,179,448,191,463,200,463,229,446,231,435,229,420,217,397,234,391" href="#" alt="South Wing of Mabini Campus" onmouseover="showSceneryBox('img/southwing.jpg', 'South Wing of Mabini Campus', 'This is PUP Main Building South Wing.')" onmouseout="removeSceneryBox()">
+
+                <!-- MAIN-WEST NO 18 -->
+                <area shape="poly" coords="221,362,154,322,154,313,151,304,156,296,162,292,170,286,177,282,247,324" href="#" alt="West Wing of Mabini Campus" onmouseover="showSceneryBox('img/westwing.png', 'West Wing of Mabini Campus', 'This is PUP Main Building West Wing.')" onmouseout="removeSceneryBox()">
+
+                <!-- MAIN-GATE NO 19 -->
+                <area shape="circle" coords="638,229,13" href="#" alt="Main Gate" onmouseover="showSceneryBox('img/maingate.jpg', 'Main Gate', 'Main entrance of the school.')" onmouseout="removeSceneryBox()">
+
+                <!-- FREEDOM PARK NO 20 -->
+                <area shape="poly" coords="369,248,392,254,409,256,419,264,415,290,406,315,373,348,358,333,358,305,345,282" href="#" alt="Freedom Park" onmouseover="showSceneryBox('img/freedompark.jpg', 'Freedom Park', 'The Nemesio E. Prudente Freedom Park is where the opening flag ceremony always happen here.')" onmouseout="removeSceneryBox()">
+
+                <!-- LIBRARY NO 21 -->
+                <area shape="poly" coords="239,45,255,101,303,89,315,120,262,140,278,194,246,207,228,144,218,147,202,165,186,113,211,120,223,119,206,60" href="#" alt="NA Library and LRC" onmouseover="showSceneryBox('img/nalib.jpg', 'N. Aquino Library and LRC', 'The main library of the university and where the Bulwagang Balagtas is located.')" onmouseout="removeSceneryBox()">
+
+                <!-- OPEN COURT NO 22 -->
+                <area shape="rect" coords="425,141,472,182" href="#" alt="Open Court" onmouseover="showSceneryBox('img/opencourt.png', 'Open Court', 'Students go here to practice their skills in basketball and volleyball, as well as some PE activities.')" onmouseout="removeSceneryBox()">
+
+                <!-- Open U NO 23 -->
+                <area shape="rect" coords="269,476,396,499" href="#" alt=" Open University / Nontraditional Studies Program" onmouseover="showSceneryBox('img/openu.png', ' Open University', 'An educational building for open university and other non-traditional studies program.')" onmouseout="removeSceneryBox()">
+
+                <!-- OVAL NO 24 -->
+                <area shape="poly" coords="522,268,550,263,577,265,598,276,618,293,625,319,628,348,622,365,606,389,562,455,536,477,511,479,476,475,459,464,443,445,433,421,433,399" href="#" alt="Oval Open Field" onmouseover="showSceneryBox('img/oval.jpg', 'Oval Open Field', 'Students come here for physical education activities, and some of the most popular events take place here as well.')" onmouseout="removeSceneryBox()">
+
+                <!-- PE BUILDING NO 25 -->
+                <area shape="rect" coords="322,42,355,148" href="#" alt="PE Building" onmouseover="showSceneryBox('img/pebldg.png', 'Physical Education Building', 'Where the College of Human Kinetics is located. Besides it is the Alumni Building.')" onmouseout="removeSceneryBox()">
+
+                <!-- PASIG RIVER NO 26-->
+                <area shape="poly" coords="2,33,26,73,42,155,62,197,72,240,72,277,79,324,95,337,96,365,109,394,115,416,114,444,116,472,119,489,126,510,128,520,0,521" href="#" alt="Pasig River" onmouseover="showSceneryBox('img/pasigriver.jpg', 'Pasig River','The Pasig River besides PUP, a water body in the Philippines that connects Laguna de Bay to Manila Bay.')" onmouseout="removeSceneryBox()">
+
+                <!-- PASIG RIVER FERRY NO 27 -->
+                <area shape="poly" coords="138,460,152,461,160,472,166,493,156,508,136,504" href="#" alt="PUP Sta, Mesa Ferry Station" onmouseover="showSceneryBox('img/ferrystation.jpg', 'PUP Sta, Mesa Ferry Station', 'A station of ferry in Pasig, Metro Manila, situated near PUP Linear Park. PUP students are allowed to enter the school through this way.')" onmouseout="removeSceneryBox()">
+
+                <!-- ACCESS ROAD NO 28 -->
+                <area shape="poly" coords="421,307,430,304,441,296,516,240,527,252,477,292,438,321,390,360,371,347" href="#" alt="Access Road/Walkway" onmouseover="showSceneryBox('img/walkwayexit.png', 'Access Road', 'Sometimes called the walkway. An alternative route to exit PUP.')" onmouseout="removeSceneryBox()">
+
+                <!-- Canteen NO 29 -->
+                <area shape="circle" coords="145,251,13" href="#" alt="University Canteen Sampaguita Building" onmouseover="showSceneryBox('img/unicanteen.png', 'University Canteen', 'A canteen where students can buy affordable food.')" onmouseout="removeSceneryBox()">
+
+                <!-- Linear Park NO 30 -->
+                <area shape="poly" coords="140,458,147,457,149,448,117,346,125,337,121,321,109,323,86,252,55,95,47,102,75,255,102,341,95,328,108,350,131,448" href="#" alt="Linear Park" onmouseover="showSceneryBox('img/linearpark.png', 'Linear Park','Many students go here and stay even for the view despites its foul odor.')" onmouseout="removeSceneryBox()">
+
+                <!-- Brass Mural NO 31 -->
+                <area shape="circle" coords="638,252,14" href="#" alt="Main Gate" onmouseover="showSceneryBox('img/pupmural.jpg', 'PUP Mural', 'The PUP mural depicts how different aspects of life interact with one another. It also depicts the Shrine of Heroism.')" onmouseout="removeSceneryBox()">
+
+                <!-- Obelisk NO 32 -->
+                <area shape="circle" coords="399,230,20" href="#" alt="Obelisk" onmouseover="showSceneryBox('img/obelisk.jpg', 'PUP Obelisk', 'It stands for the perfection of the human person and the search for truth.')" onmouseout="removeSceneryBox()">
+
+                <!-- Property Bldg. NO 33 -->
+                <area shape="poly" coords="45,38,91,37,84,51,76,58,70,67,70,83,54,85,52,67,47,57,50,50,44,46" href="#" alt="Property Bldg." onmouseover="showSceneryBox('img/printingpress.jpg', 'PUP Property Building and Motorpool', 'Property building and motorpool of PUP. Also part of the printing press building.')" onmouseout="removeSceneryBox()">
+
+                <!-- Pylon NO 34 -->
+                <area shape="circle" coords="638,208,13" href="#" alt="The Pylon" onmouseover="showSceneryBox('img/pylon.jpg', 'The Pylon', 'The Pylon originally stood for the truth, the good, and the beautiful, may also stand for wisdom, strength and beauty.')" onmouseout="removeSceneryBox()">
+
+                <!-- Sampaguita Bldg. NO 35 -->
+                <area shape="poly" coords="114,249,151,272,131,308,103,294,114,275,104,268" href="#" alt="Sampaguita Building" onmouseover="showSceneryBox('img/sampaguita.jpg', 'Sampaguita Building', 'The building for freshmen and sophomores.')" onmouseout="removeSceneryBox()">
+
+                <!-- Pavilion NO 36 -->
+                <area shape="circle" coords="494,247,13" href="#" alt="PUP Pavilion" onmouseover="showSceneryBox('img/pavilion.jpg', 'PUP Pavilion', 'A pavilion structure inside the Mabini Shrine. They also call these the Gazebos where you can hangout and chill before class starts.')" onmouseout="removeSceneryBox()">
+
+                <!-- Swimming Pool NO 37 -->
+                <area shape="rect" coords="371,46,455,112" href="#" alt="Swimming Pool" onmouseover="showSceneryBox('img/swimmingpool.jpg', 'Swimming Pool', 'An olympic-sized swimming pool area in the university.')" onmouseout="removeSceneryBox()">
+
+                <!-- Tennis Court NO 38 -->
+                <area shape="rect" coords="483,128,565,200" href="#" alt="Tennis Open Court" onmouseover="showSceneryBox('img/tenniscourt.png', 'Tennis Open Court', 'Students go here to practice their skills in tennis, also for some PE activities.')" onmouseout="removeSceneryBox()">
+
+                <!-- WATER TANK NO 39 -->
+                <area shape="poly" coords="193,77,204,76,212,84,213,95,206,102,195,102,186,94,186,83" href="#" alt="R.C. Overhead Water Tank" onmouseover="showSceneryBox('img/watertank.png', 'R.C. Overhead Water Tank', 'Its a water tank. Some students calls it a spaceship because it looks like a UFO.')" onmouseout="removeSceneryBox()">
+
+                <!-- WEST GATE NO 40 -->
+                <area shape="circle" coords="643,158,12" href="#" alt="R.C. Overhead Water Tank" onmouseover="showSceneryBox('img/westgate.png', 'West Gate', 'Depending on the situation, this gate only opens when theres an event happening at the gymnasium.')" onmouseout="removeSceneryBox()">
+            </map>
+            <span id="display"></span>
+        </main>
+    </section>
+    
+    <footer>
+        <p>&copy; Copyright 2024 Polytechnic University of the Philippines</p>
+    </footer>
+    
+    <script src="main.js"></script>
+</body>
+
+</html>
